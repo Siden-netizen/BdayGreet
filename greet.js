@@ -1,37 +1,34 @@
-/* =========================================
+/* =========================================================
+   PAPA'S GARAGE
+   BIRTHDAY CARD JAVASCRIPT
+========================================================= */
+
+
+/* =========================================================
    GET ELEMENTS
-========================================= */
+========================================================= */
 
-const intro =
-    document.getElementById("intro");
+const intro = document.getElementById("intro");
+const cardWrap = document.getElementById("cardWrap");
 
-const cardWrap =
-    document.getElementById("cardWrap");
+const openBtn = document.getElementById("openBtn");
+const replayBtn = document.getElementById("replayBtn");
+const lightBtn = document.getElementById("lightBtn");
 
-const openBtn =
-    document.getElementById("openBtn");
-
-const replayBtn =
-    document.getElementById("replayBtn");
-
-const lightBtn =
-    document.getElementById("lightBtn");
-
-const confetti =
-    document.getElementById("confetti");
+const confetti = document.getElementById("confetti");
 
 
-/* =========================================
+/* =========================================================
    OPEN CARD
-========================================= */
+========================================================= */
 
 function openCard() {
 
-    // Hide intro screen
+    /* Hide intro screen */
     intro.classList.add("hide");
 
 
-    // Show birthday card
+    /* Show birthday card */
     setTimeout(() => {
 
         cardWrap.classList.add("show");
@@ -43,21 +40,21 @@ function openCard() {
 }
 
 
-/* =========================================
+/* =========================================================
    REPLAY
-========================================= */
+========================================================= */
 
 function replayCard() {
 
-    // Hide card
+    /* Hide card */
     cardWrap.classList.remove("show");
 
 
-    // Remove confetti
+    /* Remove old confetti */
     confetti.innerHTML = "";
 
 
-    // Show intro
+    /* Show intro again */
     setTimeout(() => {
 
         intro.classList.remove("hide");
@@ -67,9 +64,9 @@ function replayCard() {
 }
 
 
-/* =========================================
+/* =========================================================
    CONFETTI
-========================================= */
+========================================================= */
 
 function launchConfetti() {
 
@@ -80,13 +77,11 @@ function launchConfetti() {
 
 
     const colors = [
-
         "#ffca28",
         "#56b5ff",
         "#e53935",
         "#ffffff",
         "#50e38a"
-
     ];
 
 
@@ -100,22 +95,16 @@ function launchConfetti() {
             document.createElement("span");
 
 
-        piece.classList.add(
-            "piece"
-        );
+        piece.classList.add("piece");
 
 
-        /* ===============================
-           RANDOM POSITION
-        =============================== */
+        /* Random horizontal position */
 
         piece.style.left =
             Math.random() * 100 + "%";
 
 
-        /* ===============================
-           RANDOM ANIMATION
-        =============================== */
+        /* Random animation duration */
 
         piece.style.animationDuration =
             (
@@ -124,13 +113,13 @@ function launchConfetti() {
             ) + "s";
 
 
+        /* Random animation delay */
+
         piece.style.animationDelay =
-            Math.random() * .8 + "s";
+            Math.random() * 0.8 + "s";
 
 
-        /* ===============================
-           RANDOM COLOR
-        =============================== */
+        /* Random color */
 
         piece.style.background =
             colors[
@@ -141,9 +130,7 @@ function launchConfetti() {
             ];
 
 
-        /* ===============================
-           RANDOM SIZE
-        =============================== */
+        /* Random size */
 
         piece.style.width =
             (
@@ -159,16 +146,12 @@ function launchConfetti() {
             ) + "px";
 
 
-        confetti.appendChild(
-            piece
-        );
+        confetti.appendChild(piece);
 
     }
 
 
-    /* ===============================
-       CLEAR CONFETTI
-    =============================== */
+    /* Remove confetti after animation */
 
     setTimeout(() => {
 
@@ -179,9 +162,9 @@ function launchConfetti() {
 }
 
 
-/* =========================================
+/* =========================================================
    LIGHTS
-========================================= */
+========================================================= */
 
 let lightsOn = true;
 
@@ -206,6 +189,7 @@ function toggleLights() {
 
     }
 
+
     else {
 
         document.documentElement
@@ -224,9 +208,9 @@ function toggleLights() {
 }
 
 
-/* =========================================
+/* =========================================================
    BUTTON EVENTS
-========================================= */
+========================================================= */
 
 openBtn.addEventListener(
     "click",

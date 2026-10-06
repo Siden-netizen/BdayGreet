@@ -1,4 +1,17 @@
 /* =========================================
+   PAPA'S GARAGE
+   FULL RESPONSIVE CSS
+
+   PC
+   LAPTOP
+   TABLET
+   MOBILE
+   SMALL PHONE
+   LANDSCAPE PHONE
+========================================= */
+
+
+/* =========================================
    RESET
 ========================================= */
 
@@ -26,26 +39,51 @@
 
 
 /* =========================================
+   HTML
+========================================= */
+
+html {
+
+    width: 100%;
+
+    min-height: 100%;
+
+    overflow-x: hidden;
+
+}
+
+
+/* =========================================
    BODY
 ========================================= */
 
 body {
 
+    width: 100%;
+
     min-height: 100vh;
 
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    overflow: hidden;
+    min-height: 100dvh;
 
     font-family:
         "Segoe UI",
         Arial,
         sans-serif;
 
-    color: var(--text);
+    color:
+        var(--text);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow-x: hidden;
+
+    overflow-y: auto;
+
+    padding: 16px;
 
     background:
 
@@ -66,24 +104,34 @@ body {
 
 
 /* =========================================
-   GARAGE
+   MAIN GARAGE
 ========================================= */
 
 .garage {
 
     position: relative;
 
-    width: min(1100px, 95vw);
+    width:
+        min(
+            1100px,
+            100%
+        );
 
-    height: min(760px, 94vh);
+    height:
+        min(
+            760px,
+            calc(100dvh - 32px)
+        );
 
     border:
         1px solid
         #283641;
 
-    border-radius: 26px;
+    border-radius:
+        26px;
 
-    overflow: hidden;
+    overflow:
+        hidden;
 
     background:
 
@@ -107,7 +155,12 @@ body {
     box-shadow:
 
         0 30px 90px
-        rgba(0,0,0,.65);
+        rgba(
+            0,
+            0,
+            0,
+            .65
+        );
 
 }
 
@@ -124,19 +177,29 @@ body {
     left: 0;
     right: 0;
 
-    height: 62px;
+    height:
+        62px;
 
     display: flex;
 
     align-items: center;
-    justify-content: space-between;
+
+    justify-content:
+        space-between;
+
+    gap: 16px;
 
     padding:
         0
         25px;
 
     background:
-        rgba(7,11,16,.90);
+        rgba(
+            7,
+            11,
+            16,
+            .92
+        );
 
     border-bottom:
         1px solid
@@ -149,11 +212,25 @@ body {
 
 .brand {
 
-    font-size: 14px;
+    min-width: 0;
 
-    font-weight: 800;
+    font-size:
+        14px;
 
-    letter-spacing: 2px;
+    font-weight:
+        800;
+
+    letter-spacing:
+        2px;
+
+    white-space:
+        nowrap;
+
+    overflow:
+        hidden;
+
+    text-overflow:
+        ellipsis;
 
 }
 
@@ -168,10 +245,17 @@ body {
 
 .status {
 
-    font-size: 12px;
+    flex:
+        0 0 auto;
+
+    font-size:
+        12px;
 
     color:
         #91a0aa;
+
+    white-space:
+        nowrap;
 
 }
 
@@ -192,15 +276,20 @@ body {
 
     position: absolute;
 
-    top: 62px;
-    left: 0;
+    top:
+        62px;
+
     right: 0;
     bottom: 0;
+    left: 0;
 
     display: flex;
 
-    align-items: center;
-    justify-content: center;
+    align-items:
+        center;
+
+    justify-content:
+        center;
 
     padding:
         25px;
@@ -214,9 +303,14 @@ body {
 
 .intro {
 
-    text-align: center;
+    width:
+        min(
+            650px,
+            100%
+        );
 
-    max-width: 650px;
+    text-align:
+        center;
 
     transition:
         .7s ease;
@@ -226,13 +320,15 @@ body {
 
 .intro.hide {
 
-    opacity: 0;
+    opacity:
+        0;
 
     transform:
         scale(.92)
         translateY(-20px);
 
-    pointer-events: none;
+    pointer-events:
+        none;
 
 }
 
@@ -244,14 +340,16 @@ body {
 
     font-size:
         clamp(
-            35px,
+            32px,
             6vw,
             65px
         );
 
-    line-height: 1;
+    line-height:
+        1;
 
-    letter-spacing: 3px;
+    letter-spacing:
+        3px;
 
     text-transform:
         uppercase;
@@ -260,6 +358,12 @@ body {
 
 
 .intro p {
+
+    width:
+        min(
+            560px,
+            100%
+        );
 
     margin:
         0
@@ -270,7 +374,11 @@ body {
         var(--muted);
 
     font-size:
-        16px;
+        clamp(
+            13px,
+            2vw,
+            16px
+        );
 
     line-height:
         1.6;
@@ -284,23 +392,38 @@ body {
 
 .gear {
 
-    width: 120px;
-    height: 120px;
+    width:
+        clamp(
+            80px,
+            12vw,
+            120px
+        );
+
+    height:
+        clamp(
+            80px,
+            12vw,
+            120px
+        );
 
     margin:
         0
         auto
-        25px;
+        24px;
 
     border:
-        14px
+        clamp(
+            9px,
+            1.4vw,
+            14px
+        )
         dotted
         #7c8790;
 
-    border-radius: 50%;
+    border-radius:
+        50%;
 
-    display:
-        flex;
+    display: flex;
 
     align-items:
         center;
@@ -319,17 +442,35 @@ body {
 
 .gear-center {
 
-    width: 35px;
-    height: 35px;
+    width:
+        clamp(
+            24px,
+            3.5vw,
+            35px
+        );
 
-    border-radius: 50%;
+    height:
+        clamp(
+            24px,
+            3.5vw,
+            35px
+        );
+
+    border-radius:
+        50%;
 
     background:
         var(--yellow);
 
     box-shadow:
+
         0 0 25px
-        rgba(255,202,40,.4);
+        rgba(
+            255,
+            202,
+            40,
+            .4
+        );
 
 }
 
@@ -343,8 +484,11 @@ body {
     border: none;
 
     padding:
-        15px
-        28px;
+        14px
+        24px;
+
+    min-height:
+        46px;
 
     border-radius:
         12px;
@@ -373,11 +517,20 @@ body {
         pointer;
 
     box-shadow:
+
         0 10px 30px
-        rgba(255,170,20,.25);
+        rgba(
+            255,
+            170,
+            20,
+            .25
+        );
 
     transition:
         .25s ease;
+
+    touch-action:
+        manipulation;
 
 }
 
@@ -391,6 +544,14 @@ body {
 }
 
 
+.start-btn:active {
+
+    transform:
+        scale(.98);
+
+}
+
+
 /* =========================================
    CARD WRAPPER
 ========================================= */
@@ -400,12 +561,22 @@ body {
     position: relative;
 
     width:
-        min(1000px, 96%);
+        min(
+            1000px,
+            100%
+        );
 
     height:
-        min(650px, 84vh);
+        min(
+            650px,
+            100%
+        );
 
-    opacity: 0;
+    min-height:
+        0;
+
+    opacity:
+        0;
 
     transform:
         translateY(40px)
@@ -428,7 +599,8 @@ body {
 
 .card-wrap.show {
 
-    opacity: 1;
+    opacity:
+        1;
 
     transform:
         translateY(0)
@@ -450,31 +622,47 @@ body {
 
     inset: 0;
 
-    border-radius:
-        22px;
-
     overflow:
         hidden;
-
-    background:
-
-        linear-gradient(
-            180deg,
-            rgba(255,255,255,.04),
-            rgba(255,255,255,.01)
-        ),
-
-        #0f171f;
 
     border:
         1px
         solid
         #3a4853;
 
+    border-radius:
+        22px;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            rgba(
+                255,
+                255,
+                255,
+                .04
+            ),
+
+            rgba(
+                255,
+                255,
+                255,
+                .01
+            )
+        ),
+
+        #0f171f;
+
     box-shadow:
 
         0 35px 70px
-        rgba(0,0,0,.6);
+        rgba(
+            0,
+            0,
+            0,
+            .6
+        );
 
 }
 
@@ -523,7 +711,7 @@ body {
     position: relative;
 
     height:
-        10px;
+        9px;
 
     background:
 
@@ -537,42 +725,55 @@ body {
     box-shadow:
 
         0 0 30px
-        rgba(255,202,40,.35);
+        rgba(
+            255,
+            202,
+            40,
+            .35
+        );
 
 }
 
 
 /* =========================================
-   CARD CONTENT
+   CARD CONTENT - DESKTOP
 ========================================= */
 
 .card-content {
 
     position: absolute;
 
-    top: 10px;
+    top:
+        9px;
 
-    left: 0;
     right: 0;
-
     bottom: 0;
+    left: 0;
 
     display: grid;
 
     grid-template-columns:
-        38%
-        62%;
 
-    min-height: 0;
+        minmax(
+            280px,
+            38%
+        )
 
-    padding:
-        35px
-        35px
-        90px
-        35px;
+        minmax(
+            0,
+            62%
+        );
 
     gap:
         30px;
+
+    padding:
+        34px
+        34px
+        88px;
+
+    min-height:
+        0;
 
 }
 
@@ -583,10 +784,13 @@ body {
 
 .left-side {
 
-    min-width: 0;
+    min-width:
+        0;
 
-    display:
-        flex;
+    min-height:
+        0;
+
+    display: flex;
 
     flex-direction:
         column;
@@ -624,6 +828,9 @@ body {
         8px
         14px;
 
+    max-width:
+        100%;
+
     border-radius:
         999px;
 
@@ -647,6 +854,9 @@ body {
     color:
         #bdc7ce;
 
+    white-space:
+        nowrap;
+
 }
 
 
@@ -658,6 +868,9 @@ body {
     height:
         8px;
 
+    flex:
+        0 0 8px;
+
     border-radius:
         50%;
 
@@ -665,6 +878,7 @@ body {
         var(--green);
 
     box-shadow:
+
         0 0 10px
         var(--green);
 
@@ -680,16 +894,17 @@ body {
     position:
         relative;
 
-    margin-top:
-        55px;
+    width:
+        100%;
 
     height:
         200px;
 
+    margin-top:
+        45px;
+
 }
 
-
-/* CAR BODY */
 
 .car-body {
 
@@ -722,6 +937,7 @@ body {
         #81909b;
 
     border-radius:
+
         50px
         60px
         20px
@@ -732,8 +948,6 @@ body {
 
 }
 
-
-/* CAR WINDOW */
 
 .car-window {
 
@@ -780,8 +994,6 @@ body {
 }
 
 
-/* HEADLIGHT */
-
 .headlight {
 
     position:
@@ -811,8 +1023,6 @@ body {
 
 }
 
-
-/* WHEELS */
 
 .wheel {
 
@@ -891,11 +1101,11 @@ body {
     display:
         flex;
 
-    gap:
-        12px;
-
     flex-wrap:
         wrap;
+
+    gap:
+        10px;
 
 }
 
@@ -908,9 +1118,6 @@ body {
     height:
         45px;
 
-    border-radius:
-        12px;
-
     display:
         flex;
 
@@ -920,8 +1127,8 @@ body {
     justify-content:
         center;
 
-    font-size:
-        22px;
+    border-radius:
+        12px;
 
     background:
         #171f27;
@@ -930,6 +1137,9 @@ body {
         1px
         solid
         #34434f;
+
+    font-size:
+        22px;
 
 }
 
@@ -953,13 +1163,19 @@ body {
 
 
 /* =========================================
-   MESSAGE SCROLLER
+   MESSAGE SCROLL
 ========================================= */
 
 .message-scroll {
 
+    width:
+        100%;
+
     height:
         100%;
+
+    min-height:
+        0;
 
     overflow-y:
         auto;
@@ -969,7 +1185,7 @@ body {
 
     padding:
         5px
-        18px
+        15px
         20px
         0;
 
@@ -980,15 +1196,20 @@ body {
         #56636d
         transparent;
 
+    -webkit-overflow-scrolling:
+        touch;
+
 }
 
 
-/* CHROME SCROLLBAR */
+/* =========================================
+   SCROLLBAR
+========================================= */
 
 .message-scroll::-webkit-scrollbar {
 
     width:
-        8px;
+        7px;
 
 }
 
@@ -1026,6 +1247,9 @@ body {
 
 .eyebrow {
 
+    margin-bottom:
+        12px;
+
     color:
         var(--yellow);
 
@@ -1038,14 +1262,13 @@ body {
     letter-spacing:
         2px;
 
-    margin-bottom:
-        12px;
-
 }
 
 
 /* =========================================
    TITLE
+   IMPORTANT:
+   DON'T USE overflow-wrap:anywhere
 ========================================= */
 
 .title {
@@ -1063,14 +1286,17 @@ body {
     line-height:
         .95;
 
-    text-transform:
-        uppercase;
-
     letter-spacing:
         2px;
 
+    text-transform:
+        uppercase;
+
+    word-break:
+        normal;
+
     overflow-wrap:
-        break-word;
+        normal;
 
 }
 
@@ -1083,8 +1309,14 @@ body {
     color:
         var(--blue);
 
+    white-space:
+        normal;
+
     word-break:
         normal;
+
+    overflow-wrap:
+        break-word;
 
 }
 
@@ -1096,7 +1328,8 @@ body {
 .dad-name {
 
     margin:
-        20px 0
+        20px
+        0
         22px;
 
     font-size:
@@ -1112,6 +1345,12 @@ body {
     line-height:
         1.3;
 
+    word-break:
+        normal;
+
+    overflow-wrap:
+        break-word;
+
 }
 
 
@@ -1121,17 +1360,24 @@ body {
 
 .message {
 
+    max-width:
+        100%;
+
     color:
         #cbd4da;
 
     font-size:
-        17px;
+        clamp(
+            15px,
+            1.65vw,
+            17px
+        );
 
     line-height:
         1.8;
 
-    max-width:
-        100%;
+    word-break:
+        normal;
 
     overflow-wrap:
         break-word;
@@ -1139,13 +1385,17 @@ body {
 }
 
 
+/* =========================================
+   SIGNATURE
+========================================= */
+
 .signature {
 
     margin-top:
         28px;
 
     padding-bottom:
-        30px;
+        25px;
 
     color:
         #8d9aa3;
@@ -1169,7 +1419,7 @@ body {
         absolute;
 
     left:
-        35px;
+        34px;
 
     bottom:
         20px;
@@ -1177,11 +1427,14 @@ body {
     z-index:
         20;
 
+    max-width:
+        48%;
+
     color:
         #64727c;
 
     font-size:
-        11px;
+        10px;
 
 }
 
@@ -1214,7 +1467,12 @@ body {
         5px;
 
     background:
-        rgba(13,20,27,.94);
+        rgba(
+            13,
+            20,
+            27,
+            .96
+        );
 
     border-radius:
         12px;
@@ -1229,10 +1487,20 @@ body {
 
 .small-btn {
 
+    min-height:
+        36px;
+
+    padding:
+        8px
+        12px;
+
     border:
         1px
         solid
         #394852;
+
+    border-radius:
+        9px;
 
     background:
         #0d141b;
@@ -1240,18 +1508,14 @@ body {
     color:
         #cbd4da;
 
-    border-radius:
-        9px;
-
-    padding:
-        9px
-        13px;
+    font-size:
+        12px;
 
     cursor:
         pointer;
 
-    font-size:
-        12px;
+    touch-action:
+        manipulation;
 
 }
 
@@ -1260,6 +1524,14 @@ body {
 
     border-color:
         #637581;
+
+}
+
+
+.small-btn:active {
+
+    transform:
+        scale(.97);
 
 }
 
@@ -1320,13 +1592,17 @@ body {
 @keyframes spin {
 
     from {
+
         transform:
             rotate(0deg);
+
     }
 
     to {
+
         transform:
             rotate(360deg);
+
     }
 
 }
@@ -1359,87 +1635,22 @@ body {
 }
 
 
-/* =========================================
-   TABLET
-========================================= */
+/* =========================================================
+   TABLET / HALF SCREEN LAPTOP
+   IMPORTANT FIX
 
-@media (max-width: 850px) {
+   At 1000px and below:
+   TWO COLUMNS -> ONE COLUMN
 
-    .card-content {
+   This gives the message enough width.
+========================================================= */
 
-        grid-template-columns:
-            35%
-            65%;
-
-        padding:
-            28px
-            28px
-            90px
-            28px;
-
-        gap:
-            22px;
-
-    }
-
-
-    .left-side {
-
-        padding-right:
-            20px;
-
-    }
-
-
-    .car {
-
-        margin-top:
-            45px;
-
-        transform:
-            scale(.85);
-
-        transform-origin:
-            top center;
-
-    }
-
-
-    .title {
-
-        font-size:
-            clamp(
-                32px,
-                6vw,
-                48px
-            );
-
-    }
-
-
-    .message {
-
-        font-size:
-            15px;
-
-        line-height:
-            1.7;
-
-    }
-
-}
-
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 650px) {
+@media (max-width: 1000px) {
 
     body {
 
-        align-items:
-            center;
+        padding:
+            10px;
 
     }
 
@@ -1447,13 +1658,16 @@ body {
     .garage {
 
         width:
-            94vw;
+            100%;
 
         height:
-            94vh;
+            min(
+                760px,
+                calc(100dvh - 20px)
+            );
 
-        border-radius:
-            20px;
+        min-height:
+            540px;
 
     }
 
@@ -1461,30 +1675,11 @@ body {
     .topbar {
 
         height:
-            55px;
+            56px;
 
         padding:
             0
-            15px;
-
-    }
-
-
-    .brand {
-
-        font-size:
-            10px;
-
-        letter-spacing:
-            1px;
-
-    }
-
-
-    .status {
-
-        font-size:
-            9px;
+            18px;
 
     }
 
@@ -1492,43 +1687,19 @@ body {
     .screen {
 
         top:
-            55px;
+            56px;
 
         padding:
-            12px;
+            16px;
 
     }
 
 
-    .card-wrap {
-
-        width:
-            100%;
-
-        height:
-            90vh;
-
-    }
-
-
-    .card {
-
-        border-radius:
-            18px;
-
-    }
-
+    /* =====================================
+       ONE COLUMN CARD
+    ====================================== */
 
     .card-content {
-
-        position:
-            absolute;
-
-        top:
-            10px;
-
-        bottom:
-            0;
 
         display:
             flex;
@@ -1537,23 +1708,27 @@ body {
             column;
 
         gap:
-            10px;
+            18px;
 
         padding:
-            20px
-            18px
-            85px;
-
-        overflow:
-            hidden;
+            22px
+            22px
+            82px;
 
     }
 
+
+    /* =====================================
+       LEFT SIDE
+    ====================================== */
 
     .left-side {
 
         flex:
             0 0 auto;
+
+        min-height:
+            150px;
 
         border-right:
             none;
@@ -1566,35 +1741,41 @@ body {
         padding:
             0
             0
-            12px;
+            15px;
 
     }
 
 
     .car {
 
+        width:
+            min(
+                420px,
+                70%
+            );
+
         height:
-            100px;
+            120px;
 
-        margin-top:
-            22px;
-
-        transform:
-            scale(.65);
-
-        transform-origin:
-            top center;
+        margin:
+            20px
+            auto
+            5px;
 
     }
 
 
     .tool-row {
 
-        display:
-            none;
+        justify-content:
+            center;
 
     }
 
+
+    /* =====================================
+       RIGHT SIDE
+    ====================================== */
 
     .right-side {
 
@@ -1604,24 +1785,19 @@ body {
         min-height:
             0;
 
+        width:
+            100%;
+
     }
 
 
     .message-scroll {
 
-        height:
-            100%;
-
-        padding-right:
-            10px;
-
-    }
-
-
-    .eyebrow {
-
-        font-size:
-            12px;
+        padding:
+            0
+            12px
+            20px
+            0;
 
     }
 
@@ -1630,23 +1806,433 @@ body {
 
         font-size:
             clamp(
-                31px,
-                9vw,
-                45px
+                38px,
+                6vw,
+                58px
             );
+
+    }
+
+
+    .message {
+
+        font-size:
+            clamp(
+                15px,
+                2vw,
+                17px
+            );
+
+    }
+
+
+    .footer-note {
+
+        left:
+            22px;
+
+        max-width:
+            45%;
+
+    }
+
+}
+
+
+/* =========================================================
+   PHONE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    body {
+
+        padding:
+            0;
+
+        align-items:
+            stretch;
+
+    }
+
+
+    .garage {
+
+        width:
+            100%;
+
+        height:
+            100dvh;
+
+        min-height:
+            0;
+
+        border-radius:
+            0;
+
+        border-left:
+            none;
+
+        border-right:
+            none;
+
+    }
+
+
+    .topbar {
+
+        height:
+            50px;
+
+        padding:
+            0
+            12px;
+
+        gap:
+            8px;
+
+    }
+
+
+    .brand {
+
+        font-size:
+            9px;
+
+        letter-spacing:
+            1px;
+
+    }
+
+
+    .status {
+
+        font-size:
+            8px;
+
+    }
+
+
+    .screen {
+
+        top:
+            50px;
+
+        padding:
+            8px;
+
+    }
+
+
+    /* =====================================
+       INTRO
+    ====================================== */
+
+    .intro {
+
+        padding:
+            8px;
+
+    }
+
+
+    .intro h1 {
+
+        font-size:
+            clamp(
+                28px,
+                9vw,
+                42px
+            );
+
+        letter-spacing:
+            1px;
+
+    }
+
+
+    .intro p {
+
+        font-size:
+            13px;
+
+        line-height:
+            1.5;
+
+        margin-bottom:
+            22px;
+
+    }
+
+
+    .start-btn {
+
+        width:
+            min(
+                100%,
+                310px
+            );
+
+        padding:
+            12px
+            15px;
+
+        font-size:
+            12px;
+
+    }
+
+
+    /* =====================================
+       CARD
+    ====================================== */
+
+    .card-wrap {
+
+        width:
+            100%;
+
+        height:
+            100%;
+
+    }
+
+
+    .card {
+
+        border-radius:
+            14px;
+
+    }
+
+
+    .card-content {
+
+        padding:
+            14px
+            13px
+            74px;
+
+        gap:
+            12px;
+
+    }
+
+
+    /* =====================================
+       LEFT SIDE
+    ====================================== */
+
+    .left-side {
+
+        min-height:
+            105px;
+
+        padding-bottom:
+            10px;
+
+    }
+
+
+    .badge {
+
+        padding:
+            7px
+            10px;
+
+        font-size:
+            9px;
+
+        letter-spacing:
+            1px;
+
+    }
+
+
+    .car {
+
+        width:
+            70%;
+
+        max-width:
+            300px;
+
+        height:
+            72px;
+
+        margin:
+            12px
+            auto
+            0;
+
+    }
+
+
+    .car-body {
+
+        bottom:
+            20px;
+
+        height:
+            40px;
+
+    }
+
+
+    .car-window {
+
+        top:
+            15px;
+
+        height:
+            23px;
+
+    }
+
+
+    .headlight {
+
+        right:
+            6%;
+
+        bottom:
+            34px;
+
+        width:
+            14px;
+
+        height:
+            10px;
+
+    }
+
+
+    .wheel {
+
+        width:
+            46px;
+
+        height:
+            46px;
+
+        border-width:
+            6px;
+
+    }
+
+
+    .wheel span {
+
+        width:
+            13px;
+
+        height:
+            13px;
+
+        margin:
+            10px
+            auto;
+
+    }
+
+
+    /* =====================================
+       HIDE TOOLS ON PHONE
+    ====================================== */
+
+    .tool-row {
+
+        display:
+            none;
+
+    }
+
+
+    /* =====================================
+       MESSAGE
+    ====================================== */
+
+    .right-side {
+
+        flex:
+            1 1 auto;
+
+    }
+
+
+    .message-scroll {
+
+        padding:
+            0
+            7px
+            12px
+            0;
+
+    }
+
+
+    .eyebrow {
+
+        font-size:
+            11px;
+
+        margin-bottom:
+            8px;
+
+        letter-spacing:
+            1.5px;
+
+    }
+
+
+    /* =====================================
+       IMPORTANT TITLE FIX
+    ====================================== */
+
+    .title {
+
+        font-size:
+            clamp(
+                30px,
+                10vw,
+                43px
+            );
+
+        line-height:
+            .98;
+
+        letter-spacing:
+            1px;
+
+        word-break:
+            normal;
+
+        overflow-wrap:
+            normal;
+
+    }
+
+
+    .title span {
+
+        overflow-wrap:
+            break-word;
 
     }
 
 
     .dad-name {
 
-        font-size:
-            16px;
-
         margin:
-            15px
+            12px
             0
-            15px;
+            14px;
+
+        font-size:
+            14px;
+
+        line-height:
+            1.3;
 
     }
 
@@ -1657,18 +2243,21 @@ body {
             14px;
 
         line-height:
-            1.7;
+            1.65;
 
     }
 
 
     .signature {
 
-        font-size:
-            12px;
+        margin-top:
+            20px;
 
         padding-bottom:
-            20px;
+            15px;
+
+        font-size:
+            11px;
 
     }
 
@@ -1681,13 +2270,236 @@ body {
     }
 
 
+    /* =====================================
+       BOTTOM BUTTONS
+    ====================================== */
+
     .controls {
 
+        left:
+            9px;
+
         right:
-            12px;
+            9px;
 
         bottom:
+            9px;
+
+        justify-content:
+            flex-end;
+
+        gap:
+            6px;
+
+        padding:
+            4px;
+
+    }
+
+
+    .small-btn {
+
+        min-height:
+            34px;
+
+        padding:
+            7px
+            10px;
+
+        font-size:
+            10px;
+
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONE
+   320px - 390px
+========================================================= */
+
+@media (max-width: 390px) {
+
+    .topbar {
+
+        height:
+            46px;
+
+        padding:
+            0
+            9px;
+
+    }
+
+
+    .screen {
+
+        top:
+            46px;
+
+        padding:
+            6px;
+
+    }
+
+
+    .brand {
+
+        font-size:
+            8px;
+
+    }
+
+
+    .status {
+
+        font-size:
+            7px;
+
+    }
+
+
+    .card {
+
+        border-radius:
+            11px;
+
+    }
+
+
+    .card-content {
+
+        padding:
+            11px
+            10px
+            70px;
+
+        gap:
+            9px;
+
+    }
+
+
+    .left-side {
+
+        min-height:
+            88px;
+
+        padding-bottom:
+            8px;
+
+    }
+
+
+    .car {
+
+        height:
+            58px;
+
+        margin-top:
+            8px;
+
+    }
+
+
+    .car-body {
+
+        bottom:
+            16px;
+
+        height:
+            34px;
+
+    }
+
+
+    .car-window {
+
+        top:
+            11px;
+
+        height:
+            20px;
+
+    }
+
+
+    .headlight {
+
+        bottom:
+            27px;
+
+        width:
             12px;
+
+        height:
+            8px;
+
+    }
+
+
+    .wheel {
+
+        width:
+            38px;
+
+        height:
+            38px;
+
+        border-width:
+            5px;
+
+    }
+
+
+    .wheel span {
+
+        width:
+            10px;
+
+        height:
+            10px;
+
+        margin:
+            9px
+            auto;
+
+    }
+
+
+    .title {
+
+        font-size:
+            clamp(
+                27px,
+                9vw,
+                36px
+            );
+
+    }
+
+
+    .dad-name {
+
+        font-size:
+            12px;
+
+        margin:
+            9px
+            0
+            11px;
+
+    }
+
+
+    .message {
+
+        font-size:
+            12.5px;
+
+        line-height:
+            1.6;
 
     }
 
@@ -1695,8 +2507,229 @@ body {
     .small-btn {
 
         padding:
-            8px
-            10px;
+            6px
+            8px;
+
+        min-height:
+            32px;
+
+    }
+
+}
+
+
+/* =========================================================
+   LANDSCAPE PHONE
+========================================================= */
+
+@media (max-width: 900px)
+and (orientation: landscape)
+and (max-height: 520px) {
+
+    body {
+
+        padding:
+            0;
+
+    }
+
+
+    .garage {
+
+        height:
+            100dvh;
+
+        min-height:
+            0;
+
+        border-radius:
+            0;
+
+    }
+
+
+    .topbar {
+
+        height:
+            44px;
+
+    }
+
+
+    .screen {
+
+        top:
+            44px;
+
+        padding:
+            7px;
+
+    }
+
+
+    /*
+       LANDSCAPE:
+       Two compact columns
+    */
+
+    .card-content {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            minmax(
+                170px,
+                31%
+            )
+
+            minmax(
+                0,
+                69%
+            );
+
+        gap:
+            14px;
+
+        padding:
+            12px
+            13px
+            60px;
+
+    }
+
+
+    .left-side {
+
+        min-height:
+            0;
+
+        border-right:
+            1px
+            solid
+            #2f3d48;
+
+        border-bottom:
+            none;
+
+        padding-right:
+            13px;
+
+        padding-bottom:
+            0;
+
+    }
+
+
+    .car {
+
+        width:
+            100%;
+
+        height:
+            90px;
+
+        margin-top:
+            12px;
+
+    }
+
+
+    .tool-row {
+
+        display:
+            flex;
+
+        justify-content:
+            center;
+
+        gap:
+            4px;
+
+    }
+
+
+    .tool {
+
+        width:
+            31px;
+
+        height:
+            31px;
+
+        font-size:
+            14px;
+
+        border-radius:
+            8px;
+
+    }
+
+
+    .title {
+
+        font-size:
+            clamp(
+                25px,
+                5vw,
+                39px
+            );
+
+    }
+
+
+    .dad-name {
+
+        font-size:
+            12px;
+
+        margin:
+            7px
+            0
+            9px;
+
+    }
+
+
+    .message {
+
+        font-size:
+            12px;
+
+        line-height:
+            1.5;
+
+    }
+
+
+    .footer-note {
+
+        display:
+            none;
+
+    }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            .01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            .01ms !important;
 
     }
 

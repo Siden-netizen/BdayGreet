@@ -27,7 +27,7 @@ const confetti =
 
 function openCard() {
 
-    // Hide opening screen
+    // Hide intro screen
     intro.classList.add("hide");
 
 
@@ -57,7 +57,7 @@ function replayCard() {
     confetti.innerHTML = "";
 
 
-    // Show opening screen
+    // Show intro
     setTimeout(() => {
 
         intro.classList.remove("hide");
@@ -105,42 +105,58 @@ function launchConfetti() {
         );
 
 
-        // Random position
+        /* ===============================
+           RANDOM POSITION
+        =============================== */
+
         piece.style.left =
             Math.random() * 100 + "%";
 
 
-        // Random animation duration
+        /* ===============================
+           RANDOM ANIMATION
+        =============================== */
+
         piece.style.animationDuration =
-            (2.5 + Math.random() * 3)
-            + "s";
+            (
+                2.5 +
+                Math.random() * 3
+            ) + "s";
 
 
-        // Random delay
         piece.style.animationDelay =
-            Math.random() * .8
-            + "s";
+            Math.random() * .8 + "s";
 
 
-        // Random color
+        /* ===============================
+           RANDOM COLOR
+        =============================== */
+
         piece.style.background =
             colors[
                 Math.floor(
-                    Math.random()
-                    * colors.length
+                    Math.random() *
+                    colors.length
                 )
             ];
 
 
-        // Random size
+        /* ===============================
+           RANDOM SIZE
+        =============================== */
+
         piece.style.width =
-            (5 + Math.random() * 7)
-            + "px";
+            (
+                5 +
+                Math.random() * 7
+            ) + "px";
 
 
         piece.style.height =
-            (8 + Math.random() * 10)
-            + "px";
+            (
+                8 +
+                Math.random() * 10
+            ) + "px";
 
 
         confetti.appendChild(
@@ -150,7 +166,10 @@ function launchConfetti() {
     }
 
 
-    // Clear confetti
+    /* ===============================
+       CLEAR CONFETTI
+    =============================== */
+
     setTimeout(() => {
 
         confetti.innerHTML = "";

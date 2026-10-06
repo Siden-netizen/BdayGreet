@@ -1,6 +1,6 @@
 /* =========================================================
    PAPA'S GARAGE
-   BIRTHDAY CARD JAVASCRIPT
+   HAPPY BIRTHDAY CARD
 ========================================================= */
 
 
@@ -24,11 +24,8 @@ const confetti = document.getElementById("confetti");
 
 function openCard() {
 
-    /* Hide intro screen */
     intro.classList.add("hide");
 
-
-    /* Show birthday card */
     setTimeout(() => {
 
         cardWrap.classList.add("show");
@@ -46,15 +43,10 @@ function openCard() {
 
 function replayCard() {
 
-    /* Hide card */
     cardWrap.classList.remove("show");
 
-
-    /* Remove old confetti */
     confetti.innerHTML = "";
 
-
-    /* Show intro again */
     setTimeout(() => {
 
         intro.classList.remove("hide");
@@ -72,9 +64,7 @@ function launchConfetti() {
 
     confetti.innerHTML = "";
 
-
     const numberOfPieces = 100;
-
 
     const colors = [
         "#ffca28",
@@ -98,13 +88,13 @@ function launchConfetti() {
         piece.classList.add("piece");
 
 
-        /* Random horizontal position */
+        /* POSITION */
 
         piece.style.left =
             Math.random() * 100 + "%";
 
 
-        /* Random animation duration */
+        /* SPEED */
 
         piece.style.animationDuration =
             (
@@ -113,13 +103,13 @@ function launchConfetti() {
             ) + "s";
 
 
-        /* Random animation delay */
+        /* DELAY */
 
         piece.style.animationDelay =
-            Math.random() * 0.8 + "s";
+            Math.random() * .8 + "s";
 
 
-        /* Random color */
+        /* COLOR */
 
         piece.style.background =
             colors[
@@ -130,7 +120,7 @@ function launchConfetti() {
             ];
 
 
-        /* Random size */
+        /* SIZE */
 
         piece.style.width =
             (
@@ -150,8 +140,6 @@ function launchConfetti() {
 
     }
 
-
-    /* Remove confetti after animation */
 
     setTimeout(() => {
 
@@ -183,14 +171,10 @@ function toggleLights() {
                 "#ffca28"
             );
 
-
         lightBtn.textContent =
             "💡 Lights";
 
-    }
-
-
-    else {
+    } else {
 
         document.documentElement
             .style
@@ -198,7 +182,6 @@ function toggleLights() {
                 "--yellow",
                 "#7d8790"
             );
-
 
         lightBtn.textContent =
             "🌑 Lights";

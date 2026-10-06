@@ -1,62 +1,8 @@
 /* =========================================================
    PAPA'S GARAGE
-   BIRTHDAY CARD
-   FULL RESPONSIVE CSS
+   HAPPY BIRTHDAY CARD
+   FULL RESPONSIVE VERSION
 ========================================================= */
-
-
-/* =========================================================
-   RESET
-========================================================= */
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-
-html {
-    width: 100%;
-    min-height: 100%;
-    overflow-x: hidden;
-}
-
-
-body {
-    width: 100%;
-    min-height: 100vh;
-    min-height: 100dvh;
-
-    font-family:
-        "Segoe UI",
-        Arial,
-        sans-serif;
-
-    color: var(--text);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    overflow-x: hidden;
-    overflow-y: auto;
-
-    padding: 16px;
-
-    background:
-        radial-gradient(
-            circle at 50% 20%,
-            #1a2732 0,
-            transparent 30%
-        ),
-        linear-gradient(
-            140deg,
-            #030507,
-            #0b1117 45%,
-            #05070a
-        );
-}
 
 
 /* =========================================================
@@ -70,39 +16,102 @@ body {
 
     --text: #f3f6f8;
     --muted: #9eabb6;
+
+    --page-bg: #05080c;
+    --card-bg: #0f171f;
 }
 
 
 /* =========================================================
-   MAIN GARAGE
+   RESET
+========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+html {
+    width: 100%;
+    min-width: 0;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+
+body {
+    width: 100%;
+    min-width: 0;
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    margin: 0;
+    padding: 16px;
+
+    color: var(--text);
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            #1a2732 0%,
+            transparent 30%
+        ),
+        linear-gradient(
+            140deg,
+            #030507,
+            #0b1117 45%,
+            #05070a
+        );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   GARAGE
 ========================================================= */
 
 .garage {
     position: relative;
 
-    width: min(1100px, 100%);
+    width: 100%;
+    max-width: 1100px;
 
     height: min(
         760px,
         calc(100dvh - 32px)
     );
 
-    min-height: 540px;
-
-    border: 1px solid #283641;
-
-    border-radius: 26px;
+    min-height: 0;
 
     overflow: hidden;
 
+    border:
+        1px
+        solid
+        #283641;
+
+    border-radius: 26px;
+
     background:
         linear-gradient(
-            rgba(255, 255, 255, .025) 1px,
+            rgba(255,255,255,.025) 1px,
             transparent 1px
         ),
         linear-gradient(
             90deg,
-            rgba(255, 255, 255, .025) 1px,
+            rgba(255,255,255,.025) 1px,
             transparent 1px
         ),
         #0a0f14;
@@ -111,7 +120,7 @@ body {
 
     box-shadow:
         0 30px 90px
-        rgba(0, 0, 0, .65);
+        rgba(0,0,0,.65);
 }
 
 
@@ -124,23 +133,25 @@ body {
 
     top: 0;
     left: 0;
-    right: 0;
 
+    width: 100%;
     height: 62px;
+
+    padding: 0 25px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    gap: 16px;
-
-    padding: 0 25px;
+    gap: 15px;
 
     background:
-        rgba(7, 11, 16, .92);
+        rgba(7,11,16,.94);
 
     border-bottom:
-        1px solid #253440;
+        1px
+        solid
+        #253440;
 
     z-index: 20;
 }
@@ -155,6 +166,7 @@ body {
     letter-spacing: 2px;
 
     white-space: nowrap;
+
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -189,15 +201,16 @@ body {
     position: absolute;
 
     top: 62px;
-    right: 0;
-    bottom: 0;
     left: 0;
+
+    width: 100%;
+    height: calc(100% - 62px);
+
+    padding: 24px;
 
     display: flex;
     align-items: center;
     justify-content: center;
-
-    padding: 25px;
 
     overflow: hidden;
 }
@@ -208,11 +221,16 @@ body {
 ========================================================= */
 
 .intro {
-    width: min(650px, 100%);
+    width: 100%;
+    max-width: 650px;
+
+    margin: 0 auto;
 
     text-align: center;
 
-    transition: .7s ease;
+    transition:
+        opacity .7s ease,
+        transform .7s ease;
 }
 
 
@@ -220,15 +238,15 @@ body {
     opacity: 0;
 
     transform:
-        scale(.92)
-        translateY(-20px);
+        translateY(-20px)
+        scale(.92);
 
     pointer-events: none;
 }
 
 
 .intro h1 {
-    margin-bottom: 12px;
+    margin: 0 0 12px;
 
     font-size:
         clamp(
@@ -246,12 +264,10 @@ body {
 
 
 .intro p {
-    width: min(560px, 100%);
+    width: 100%;
+    max-width: 560px;
 
-    margin:
-        0
-        auto
-        28px;
+    margin: 0 auto 28px;
 
     color: var(--muted);
 
@@ -291,11 +307,7 @@ body {
         24px;
 
     border:
-        clamp(
-            9px,
-            1.4vw,
-            14px
-        )
+        clamp(9px,1.4vw,14px)
         dotted
         #7c8790;
 
@@ -334,7 +346,7 @@ body {
 
     box-shadow:
         0 0 25px
-        rgba(255, 202, 40, .4);
+        rgba(255,202,40,.4);
 }
 
 
@@ -343,12 +355,19 @@ body {
 ========================================================= */
 
 .start-btn {
-    border: none;
+    display: inline-flex;
 
-    padding: 14px 24px;
+    align-items: center;
+    justify-content: center;
+
+    width: auto;
+    max-width: 100%;
 
     min-height: 46px;
 
+    padding: 14px 24px;
+
+    border: 0;
     border-radius: 12px;
 
     color: #101010;
@@ -361,7 +380,6 @@ body {
         );
 
     font-size: 14px;
-
     font-weight: 900;
 
     letter-spacing: 1px;
@@ -370,9 +388,10 @@ body {
 
     box-shadow:
         0 10px 30px
-        rgba(255, 170, 20, .25);
+        rgba(255,170,20,.25);
 
-    transition: .25s ease;
+    transition:
+        transform .25s ease;
 
     touch-action: manipulation;
 }
@@ -397,13 +416,15 @@ body {
 .card-wrap {
     position: relative;
 
-    width: min(1000px, 100%);
+    width: 100%;
+    max-width: 1000px;
 
     height: min(650px, 100%);
 
-    margin: 0 auto;
-
+    min-width: 0;
     min-height: 0;
+
+    margin: 0 auto;
 
     opacity: 0;
 
@@ -414,13 +435,8 @@ body {
     pointer-events: none;
 
     transition:
-        1s
-        cubic-bezier(
-            .2,
-            .8,
-            .2,
-            1
-        );
+        opacity 1s ease,
+        transform 1s cubic-bezier(.2,.8,.2,1);
 }
 
 
@@ -440,9 +456,13 @@ body {
 ========================================================= */
 
 .card {
-    position: absolute;
+    position: relative;
 
-    inset: 0;
+    width: 100%;
+    height: 100%;
+
+    min-width: 0;
+    min-height: 0;
 
     overflow: hidden;
 
@@ -456,14 +476,14 @@ body {
     background:
         linear-gradient(
             180deg,
-            rgba(255, 255, 255, .04),
-            rgba(255, 255, 255, .01)
+            rgba(255,255,255,.04),
+            rgba(255,255,255,.01)
         ),
-        #0f171f;
+        var(--card-bg);
 
     box-shadow:
         0 35px 70px
-        rgba(0, 0, 0, .6);
+        rgba(0,0,0,.6);
 }
 
 
@@ -477,6 +497,8 @@ body {
     inset: 0;
 
     opacity: .08;
+
+    pointer-events: none;
 
     background:
         linear-gradient(
@@ -492,13 +514,11 @@ body {
         );
 
     background-size: 38px 38px;
-
-    pointer-events: none;
 }
 
 
 /* =========================================================
-   GARAGE LIGHT
+   LIGHT
 ========================================================= */
 
 .garage-light {
@@ -508,8 +528,7 @@ body {
     left: 0;
 
     width: 100%;
-
-    height: 9px;
+    height: 8px;
 
     background:
         linear-gradient(
@@ -521,7 +540,7 @@ body {
 
     box-shadow:
         0 0 30px
-        rgba(255, 202, 40, .35);
+        rgba(255,202,40,.35);
 
     z-index: 5;
 }
@@ -534,30 +553,32 @@ body {
 .card-content {
     position: absolute;
 
-    top: 9px;
-    right: 0;
-    bottom: 0;
+    top: 8px;
     left: 0;
+
+    width: 100%;
+    height: calc(100% - 8px);
+
+    min-width: 0;
+    min-height: 0;
+
+    padding:
+        30px
+        30px
+        82px;
 
     display: grid;
 
     grid-template-columns:
-        minmax(280px, 38%)
+        minmax(250px, 38%)
         minmax(0, 62%);
 
-    gap: 30px;
-
-    padding:
-        34px
-        34px
-        88px;
-
-    min-height: 0;
+    gap: 28px;
 }
 
 
 /* =========================================================
-   LEFT SIDE
+   LEFT
 ========================================================= */
 
 .left-side {
@@ -573,12 +594,14 @@ body {
         solid
         #2f3d48;
 
-    padding-right: 30px;
+    padding-right: 28px;
 }
 
 
 .left-top {
     width: 100%;
+
+    text-align: center;
 }
 
 
@@ -590,19 +613,17 @@ body {
     display: inline-flex;
 
     align-items: center;
+    justify-content: center;
 
     gap: 8px;
 
-    padding: 8px 14px;
-
     max-width: 100%;
 
+    padding:
+        8px
+        14px;
+
     border-radius: 999px;
-
-    font-size: 11px;
-    font-weight: 800;
-
-    letter-spacing: 1.5px;
 
     background: #17222c;
 
@@ -612,6 +633,11 @@ body {
         #34434f;
 
     color: #bdc7ce;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
 
     white-space: nowrap;
 }
@@ -641,9 +667,14 @@ body {
     position: relative;
 
     width: 100%;
-    height: 200px;
+    max-width: 360px;
 
-    margin-top: 45px;
+    height: 180px;
+
+    margin:
+        30px
+        auto
+        0;
 }
 
 
@@ -652,10 +683,9 @@ body {
 
     left: 6%;
     right: 6%;
+    bottom: 35px;
 
-    bottom: 40px;
-
-    height: 80px;
+    height: 72px;
 
     background:
         linear-gradient(
@@ -683,10 +713,10 @@ body {
     position: absolute;
 
     width: 42%;
-    height: 45px;
+    height: 43px;
 
     left: 29%;
-    top: 38px;
+    top: 35px;
 
     border:
         2px
@@ -716,11 +746,10 @@ body {
     position: absolute;
 
     right: 6%;
+    bottom: 58px;
 
-    bottom: 65px;
-
-    width: 20px;
-    height: 14px;
+    width: 18px;
+    height: 13px;
 
     border-radius: 50%;
 
@@ -735,29 +764,31 @@ body {
 .wheel {
     position: absolute;
 
-    bottom: 2px;
+    bottom: 0;
 
-    width: 62px;
-    height: 62px;
+    width: 58px;
+    height: 58px;
+
+    border:
+        7px
+        solid
+        #323d45;
 
     border-radius: 50%;
 
     background: #090c0f;
-
-    border:
-        8px
-        solid
-        #323d45;
 }
 
 
 .wheel span {
     display: block;
 
-    width: 17px;
-    height: 17px;
+    width: 16px;
+    height: 16px;
 
-    margin: 14px auto;
+    margin:
+        13px
+        auto;
 
     border-radius: 50%;
 
@@ -782,20 +813,19 @@ body {
 .tool-row {
     display: flex;
 
-    flex-wrap: wrap;
-
     justify-content: center;
 
-    gap: 10px;
+    flex-wrap: wrap;
+
+    gap: 9px;
 }
 
 
 .tool {
-    width: 45px;
-    height: 45px;
+    width: 44px;
+    height: 44px;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
@@ -808,12 +838,12 @@ body {
         solid
         #34434f;
 
-    font-size: 22px;
+    font-size: 21px;
 }
 
 
 /* =========================================================
-   RIGHT SIDE
+   RIGHT
 ========================================================= */
 
 .right-side {
@@ -823,7 +853,7 @@ body {
     overflow: hidden;
 
     display: flex;
-    justify-content: center;
+    flex-direction: column;
 }
 
 
@@ -835,16 +865,17 @@ body {
     width: 100%;
     height: 100%;
 
+    min-width: 0;
     min-height: 0;
 
-    overflow-y: auto;
     overflow-x: hidden;
+    overflow-y: auto;
 
     padding:
-        5px
+        4px
+        12px
         15px
-        20px
-        0;
+        2px;
 
     scrollbar-width: thin;
 
@@ -858,11 +889,11 @@ body {
 
 .message-content {
     width: 100%;
-    max-width: 650px;
+    max-width: 680px;
+
+    min-width: 0;
 
     margin: 0 auto;
-
-    padding-right: 4px;
 }
 
 
@@ -871,7 +902,7 @@ body {
 ========================================================= */
 
 .message-scroll::-webkit-scrollbar {
-    width: 7px;
+    width: 6px;
 }
 
 
@@ -887,21 +918,16 @@ body {
 }
 
 
-.message-scroll::-webkit-scrollbar-thumb:hover {
-    background: #72818c;
-}
-
-
 /* =========================================================
    EYEBROW
 ========================================================= */
 
 .eyebrow {
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 
     color: var(--yellow);
 
-    font-size: 15px;
+    font-size: 14px;
 
     font-weight: 900;
 
@@ -914,6 +940,9 @@ body {
 ========================================================= */
 
 .title {
+    width: 100%;
+    max-width: 100%;
+
     margin: 0;
 
     font-size:
@@ -923,13 +952,11 @@ body {
             62px
         );
 
-    line-height: .95;
+    line-height: .96;
 
     letter-spacing: 2px;
 
     text-transform: uppercase;
-
-    word-break: normal;
 
     overflow-wrap: normal;
 }
@@ -939,10 +966,6 @@ body {
     display: block;
 
     color: var(--blue);
-
-    white-space: normal;
-
-    word-break: normal;
 
     overflow-wrap: normal;
 }
@@ -954,22 +977,20 @@ body {
 
 .dad-name {
     margin:
-        20px
+        18px
         0
-        22px;
+        20px;
 
     font-size:
         clamp(
-            17px,
+            16px,
             2vw,
-            23px
+            22px
         );
 
     font-weight: 800;
 
     line-height: 1.3;
-
-    word-break: normal;
 
     overflow-wrap: break-word;
 }
@@ -981,21 +1002,20 @@ body {
 
 .message {
     width: 100%;
+    max-width: 650px;
 
-    max-width: 620px;
+    margin: 0;
 
     color: #cbd4da;
 
     font-size:
         clamp(
             15px,
-            1.5vw,
+            1.45vw,
             17px
         );
 
-    line-height: 1.8;
-
-    word-break: normal;
+    line-height: 1.75;
 
     overflow-wrap: break-word;
 }
@@ -1006,9 +1026,9 @@ body {
 ========================================================= */
 
 .signature {
-    margin-top: 28px;
+    margin-top: 25px;
 
-    padding-bottom: 25px;
+    padding-bottom: 18px;
 
     color: #8d9aa3;
 
@@ -1025,16 +1045,14 @@ body {
 .footer-note {
     position: absolute;
 
-    left: 34px;
-    bottom: 20px;
-
-    z-index: 20;
-
-    max-width: 48%;
+    left: 30px;
+    bottom: 18px;
 
     color: #64727c;
 
     font-size: 10px;
+
+    z-index: 20;
 }
 
 
@@ -1045,38 +1063,35 @@ body {
 .controls {
     position: absolute;
 
-    right: 20px;
-    bottom: 14px;
-
-    z-index: 30;
+    right: 16px;
+    bottom: 12px;
 
     display: flex;
 
-    gap: 8px;
+    gap: 7px;
 
     padding: 5px;
-
-    background:
-        rgba(
-            13,
-            20,
-            27,
-            .96
-        );
-
-    border-radius: 12px;
 
     border:
         1px
         solid
         #253440;
+
+    border-radius: 12px;
+
+    background:
+        rgba(13,20,27,.97);
+
+    z-index: 30;
 }
 
 
 .small-btn {
-    min-height: 36px;
+    min-height: 35px;
 
-    padding: 8px 12px;
+    padding:
+        7px
+        12px;
 
     border:
         1px
@@ -1094,13 +1109,6 @@ body {
     cursor: pointer;
 
     touch-action: manipulation;
-
-    transition: .2s ease;
-}
-
-
-.small-btn:hover {
-    border-color: #637581;
 }
 
 
@@ -1118,9 +1126,9 @@ body {
 
     inset: 0;
 
-    pointer-events: none;
-
     overflow: hidden;
+
+    pointer-events: none;
 
     z-index: 50;
 }
@@ -1183,10 +1191,9 @@ body {
 
 /* =========================================================
    TABLET
-   1000px AND BELOW
 ========================================================= */
 
-@media (max-width: 1000px) {
+@media (max-width: 900px) {
 
     body {
         padding: 10px;
@@ -1194,57 +1201,73 @@ body {
 
 
     .garage {
-        width: 100%;
-
         height:
-            min(
-                760px,
-                calc(100dvh - 20px)
+            calc(
+                100dvh - 20px
             );
 
-        min-height: 540px;
+        border-radius: 20px;
     }
 
 
     .topbar {
         height: 56px;
 
-        padding: 0 18px;
+        padding:
+            0
+            18px;
     }
 
 
     .screen {
         top: 56px;
 
-        padding: 16px;
+        height:
+            calc(
+                100% - 56px
+            );
 
-        overflow-y: auto;
+        padding: 16px;
     }
 
 
-    /* ONE COLUMN */
+    /* SINGLE COLUMN */
+
+    .card-wrap {
+        width: 100%;
+        max-width: 700px;
+
+        height: calc(100% - 4px);
+    }
+
 
     .card-content {
-        display: flex;
+        position: absolute;
 
+        top: 8px;
+        left: 0;
+
+        width: 100%;
+        height: calc(100% - 8px);
+
+        display: flex;
         flex-direction: column;
 
-        gap: 18px;
+        gap: 16px;
 
         padding:
-            22px
-            22px
-            82px;
+            20px
+            20px
+            76px;
     }
 
 
     .left-side {
-        flex:
-            0 0 auto;
-
         width: 100%;
 
-        min-height: 150px;
+        flex: 0 0 auto;
+
+        min-height: 130px;
 
         border-right: none;
 
@@ -1256,49 +1279,76 @@ body {
         padding:
             0
             0
-            15px;
+            14px;
     }
 
 
     .car {
-        width:
-            min(
-                420px,
-                70%
-            );
+        width: min(380px, 75%);
 
-        height: 120px;
+        height: 105px;
 
         margin:
-            20px
+            16px
             auto
-            5px;
+            0;
+    }
+
+
+    .car-body {
+        bottom: 25px;
+
+        height: 52px;
+    }
+
+
+    .car-window {
+        top: 22px;
+
+        height: 31px;
+    }
+
+
+    .headlight {
+        bottom: 44px;
+
+        width: 15px;
+        height: 11px;
+    }
+
+
+    .wheel {
+        width: 45px;
+        height: 45px;
+
+        border-width: 6px;
+    }
+
+
+    .wheel span {
+        width: 13px;
+        height: 13px;
+
+        margin: 9px auto;
+    }
+
+
+    .tool-row {
+        display: none;
     }
 
 
     .right-side {
-        flex:
-            1
-            1
-            auto;
-
         width: 100%;
+
+        flex: 1 1 auto;
 
         min-height: 0;
     }
 
 
-    .message-scroll {
-        padding:
-            0
-            12px
-            20px
-            0;
-    }
-
-
     .message-content {
-        max-width: 720px;
+        max-width: 650px;
 
         margin: 0 auto;
     }
@@ -1311,29 +1361,17 @@ body {
     }
 
 
-    .title {
-        font-size:
-            clamp(
-                38px,
-                6vw,
-                58px
-            );
-    }
-
-
     .message {
-        max-width: 680px;
+        max-width: 640px;
 
-        margin:
-            0
-            auto;
+        margin: 0 auto;
+
+        font-size: 16px;
     }
 
 
     .footer-note {
-        left: 22px;
-
-        max-width: 45%;
+        display: none;
     }
 
 }
@@ -1341,26 +1379,29 @@ body {
 
 /* =========================================================
    PHONE
-   650px AND BELOW
 ========================================================= */
 
-@media (max-width: 650px) {
+@media (max-width: 600px) {
 
+    html,
     body {
         width: 100%;
+        max-width: 100%;
 
+        overflow-x: hidden;
+    }
+
+
+    body {
         padding: 0;
 
-        margin: 0;
-
-        align-items: stretch;
-
-        justify-content: stretch;
+        display: block;
     }
 
 
     .garage {
         width: 100%;
+        max-width: none;
 
         height: 100dvh;
 
@@ -1370,15 +1411,18 @@ body {
 
         border-radius: 0;
 
-        border-left: none;
-        border-right: none;
+        border-left: 0;
+        border-right: 0;
     }
 
 
     .topbar {
-        height: 50px;
+        width: 100%;
+        height: 48px;
 
-        padding: 0 12px;
+        padding:
+            0
+            12px;
 
         gap: 8px;
     }
@@ -1388,6 +1432,8 @@ body {
         font-size: 9px;
 
         letter-spacing: 1px;
+
+        max-width: 70%;
     }
 
 
@@ -1399,27 +1445,20 @@ body {
     .screen {
         position: absolute;
 
-        top: 50px;
-        right: 0;
-        bottom: 0;
+        top: 48px;
         left: 0;
 
         width: 100%;
+        height: calc(100% - 48px);
 
-        height:
-            calc(
-                100dvh - 50px
-            );
-
-        padding: 10px;
+        padding: 8px;
 
         display: flex;
 
         align-items: center;
         justify-content: center;
 
-        overflow-y: auto;
-        overflow-x: hidden;
+        overflow: hidden;
     }
 
 
@@ -1429,14 +1468,35 @@ body {
 
     .intro {
         width: 100%;
+        max-width: 420px;
 
-        max-width: 500px;
+        padding:
+            0
+            4px;
+    }
 
-        padding: 8px;
+
+    .gear {
+        width: 76px;
+        height: 76px;
+
+        margin-bottom: 18px;
+
+        border-width: 9px;
+    }
+
+
+    .gear-center {
+        width: 23px;
+        height: 23px;
     }
 
 
     .intro h1 {
+        width: 100%;
+
+        margin-bottom: 10px;
+
         font-size:
             clamp(
                 28px,
@@ -1444,31 +1504,39 @@ body {
                 42px
             );
 
+        line-height: 1.05;
+
         letter-spacing: 1px;
+
+        white-space: normal;
     }
 
 
     .intro p {
+        width: 100%;
+
+        margin-bottom: 22px;
+
         font-size: 13px;
 
         line-height: 1.5;
-
-        margin-bottom: 22px;
     }
 
 
     .start-btn {
-        width:
-            min(
-                100%,
-                310px
-            );
+        width: min(100%, 300px);
+
+        min-height: 46px;
 
         padding:
             12px
-            15px;
+            14px;
 
-        font-size: 12px;
+        font-size: 11px;
+
+        white-space: normal;
+
+        text-align: center;
     }
 
 
@@ -1480,62 +1548,62 @@ body {
         position: relative;
 
         width: 100%;
-
         max-width: 520px;
 
-        height:
-            calc(
-                100dvh - 70px
-            );
+        height: 100%;
 
+        min-width: 0;
         min-height: 0;
 
         margin: 0 auto;
-
-        flex-shrink: 0;
     }
 
 
     .card {
+        position: relative;
+
         width: 100%;
         height: 100%;
 
-        border-radius: 16px;
+        min-width: 0;
 
-        margin: 0 auto;
+        border-radius: 14px;
     }
 
 
     .card-content {
+        position: absolute;
+
+        top: 8px;
+        left: 0;
+
         width: 100%;
-        height: 100%;
+        height: calc(100% - 8px);
 
         display: flex;
-
         flex-direction: column;
 
-        gap: 12px;
+        gap: 10px;
 
         padding:
-            15px
-            15px
-            72px;
+            12px
+            10px
+            66px;
     }
 
 
     /* =====================================================
-       LEFT SIDE
+       LEFT / CAR
     ===================================================== */
 
     .left-side {
         width: 100%;
 
-        min-height: 100px;
+        min-width: 0;
 
-        flex:
-            0
-            0
-            auto;
+        min-height: 86px;
+
+        flex: 0 0 auto;
 
         border-right: none;
 
@@ -1547,82 +1615,80 @@ body {
         padding:
             0
             0
-            10px;
+            7px;
     }
 
 
     .badge {
-        display: flex;
-
-        width: fit-content;
-
-        max-width: 100%;
-
-        margin: 0 auto;
+        max-width: calc(100% - 10px);
 
         padding:
-            7px
-            10px;
+            6px
+            9px;
 
-        font-size: 9px;
+        font-size: 8px;
 
         letter-spacing: 1px;
     }
 
 
     .car {
-        width:
-            min(
-                260px,
-                75%
-            );
+        width: min(240px, 68%);
 
-        height: 70px;
+        height: 55px;
 
         margin:
-            10px
+            7px
             auto
             0;
     }
 
 
     .car-body {
-        bottom: 20px;
+        left: 5%;
+        right: 5%;
 
-        height: 40px;
+        bottom: 14px;
+
+        height: 30px;
     }
 
 
     .car-window {
-        top: 15px;
+        width: 42%;
 
-        height: 23px;
+        left: 29%;
+        top: 9px;
+
+        height: 17px;
     }
 
 
     .headlight {
-        right: 6%;
+        right: 5%;
 
-        bottom: 34px;
+        bottom: 24px;
 
-        width: 14px;
-        height: 10px;
+        width: 11px;
+        height: 7px;
     }
 
 
     .wheel {
-        width: 46px;
-        height: 46px;
+        bottom: 0;
 
-        border-width: 6px;
+        width: 34px;
+        height: 34px;
+
+        border-width: 5px;
     }
 
 
     .wheel span {
-        width: 13px;
-        height: 13px;
+        width: 9px;
+        height: 9px;
 
-        margin: 10px auto;
+        margin: 7px auto;
     }
 
 
@@ -1641,14 +1707,7 @@ body {
         min-width: 0;
         min-height: 0;
 
-        flex:
-            1
-            1
-            auto;
-
-        display: flex;
-
-        justify-content: center;
+        flex: 1 1 auto;
 
         overflow: hidden;
     }
@@ -1657,66 +1716,63 @@ body {
     .message-scroll {
         width: 100%;
 
-        max-width: 500px;
-
-        height: 100%;
+        min-width: 0;
+        min-height: 0;
 
         padding:
+            2px
             5px
-            8px
-            20px;
+            12px
+            2px;
 
-        margin: 0 auto;
-
-        overflow-y: auto;
         overflow-x: hidden;
+        overflow-y: auto;
     }
 
 
     .message-content {
         width: 100%;
-
         max-width: 480px;
 
-        margin: 0 auto;
+        min-width: 0;
 
-        padding: 0 3px;
+        margin: 0 auto;
     }
 
 
     .eyebrow {
-        text-align: center;
+        margin-bottom: 7px;
 
-        font-size: 11px;
-
-        margin-bottom: 8px;
+        font-size: 10px;
 
         letter-spacing: 1.5px;
+
+        text-align: center;
     }
 
 
     .title {
-        text-align: center;
+        width: 100%;
 
         font-size:
             clamp(
-                30px,
+                27px,
                 9vw,
-                43px
+                40px
             );
 
         line-height: .98;
 
         letter-spacing: 1px;
 
-        word-break: normal;
-
-        overflow-wrap: normal;
+        text-align: center;
     }
 
 
     .title span {
-        display: block;
+        width: 100%;
+
+        white-space: normal;
 
         word-break: normal;
 
@@ -1725,29 +1781,32 @@ body {
 
 
     .dad-name {
-        text-align: center;
+        width: 100%;
 
-        font-size: 14px;
+        margin:
+            10px
+            0
+            12px;
+
+        font-size: 12px;
 
         line-height: 1.3;
 
-        margin:
-            12px
-            0
-            16px;
+        text-align: center;
+
+        white-space: normal;
     }
 
 
     .message {
         width: 100%;
+        max-width: 100%;
 
-        max-width: 480px;
+        margin: 0;
 
-        margin: 0 auto;
+        font-size: 14px;
 
-        font-size: 15px;
-
-        line-height: 1.7;
+        line-height: 1.65;
 
         text-align: left;
 
@@ -1758,46 +1817,42 @@ body {
 
 
     .signature {
+        margin-top: 18px;
+
+        padding-bottom: 12px;
+
+        font-size: 11px;
+
         text-align: center;
-
-        margin-top: 22px;
-
-        padding-bottom: 15px;
-
-        font-size: 12px;
     }
 
 
     /* =====================================================
-       CONTROLS
+       BUTTONS
     ===================================================== */
 
     .controls {
         left: 50%;
         right: auto;
-
-        bottom: 9px;
+        bottom: 8px;
 
         transform: translateX(-50%);
 
         width: max-content;
+        max-width: calc(100% - 16px);
 
-        display: flex;
-
-        justify-content: center;
-
-        gap: 6px;
+        gap: 5px;
 
         padding: 4px;
     }
 
 
     .small-btn {
-        min-height: 34px;
+        min-height: 32px;
 
         padding:
-            7px
-            11px;
+            6px
+            9px;
 
         font-size: 10px;
     }
@@ -1812,47 +1867,12 @@ body {
 
 /* =========================================================
    SMALL PHONE
-   390px AND BELOW
 ========================================================= */
 
 @media (max-width: 390px) {
 
-    .topbar {
-        height: 46px;
-
-        padding: 0 9px;
-    }
-
-
     .screen {
-        top: 46px;
-
-        height:
-            calc(
-                100dvh - 46px
-            );
-
-        padding: 7px;
-    }
-
-
-    .brand {
-        font-size: 8px;
-    }
-
-
-    .status {
-        font-size: 7px;
-    }
-
-
-    .card-wrap {
-        max-width: 370px;
-
-        height:
-            calc(
-                100dvh - 60px
-            );
+        padding: 6px;
     }
 
 
@@ -1863,230 +1883,89 @@ body {
 
     .card-content {
         padding:
-            12px
-            11px
-            68px;
-
-        gap: 10px;
-    }
-
-
-    .left-side {
-        min-height: 88px;
-
-        padding-bottom: 8px;
-    }
-
-
-    .badge {
-        padding:
-            6px
-            9px;
-
-        font-size: 8px;
-    }
-
-
-    .car {
-        width: 65%;
-
-        height: 55px;
-
-        margin-top: 7px;
-    }
-
-
-    .car-body {
-        bottom: 16px;
-
-        height: 34px;
-    }
-
-
-    .car-window {
-        top: 11px;
-
-        height: 20px;
-    }
-
-
-    .headlight {
-        bottom: 27px;
-
-        width: 12px;
-        height: 8px;
-    }
-
-
-    .wheel {
-        width: 38px;
-        height: 38px;
-
-        border-width: 5px;
-    }
-
-
-    .wheel span {
-        width: 10px;
-        height: 10px;
-
-        margin: 9px auto;
-    }
-
-
-    .message-scroll {
-        padding:
-            3px
-            6px
-            15px;
-    }
-
-
-    .eyebrow {
-        font-size: 10px;
-
-        margin-bottom: 7px;
-    }
-
-
-    .title {
-        font-size:
-            clamp(
-                27px,
-                9vw,
-                36px
-            );
-    }
-
-
-    .dad-name {
-        font-size: 12px;
-
-        margin:
-            9px
-            0
-            11px;
-    }
-
-
-    .message {
-        font-size: 13px;
-
-        line-height: 1.65;
-    }
-
-
-    .signature {
-        font-size: 11px;
-
-        margin-top: 18px;
-    }
-
-
-    .small-btn {
-        padding:
-            6px
-            8px;
-
-        min-height: 32px;
-    }
-
-}
-
-
-/* =========================================================
-   VERY SMALL PHONE
-   340px AND BELOW
-========================================================= */
-
-@media (max-width: 340px) {
-
-    .screen {
-        padding: 5px;
-    }
-
-
-    .card-wrap {
-        max-width: 330px;
-
-        height:
-            calc(
-                100dvh - 55px
-            );
-    }
-
-
-    .card-content {
-        padding:
             10px
             9px
-            65px;
+            64px;
 
         gap: 8px;
     }
 
 
     .left-side {
-        min-height: 80px;
+        min-height: 78px;
+
+        padding-bottom: 6px;
     }
 
 
     .badge {
-        font-size: 7px;
-
         padding:
             5px
             8px;
+
+        font-size: 7.5px;
     }
 
 
     .car {
-        height: 48px;
+        width: 63%;
+
+        height: 49px;
 
         margin-top: 5px;
     }
 
 
     .car-body {
-        bottom: 13px;
+        bottom: 12px;
 
-        height: 29px;
+        height: 27px;
     }
 
 
     .car-window {
-        top: 9px;
+        top: 8px;
 
-        height: 17px;
+        height: 16px;
     }
 
 
     .headlight {
-        bottom: 23px;
+        bottom: 22px;
 
         width: 10px;
-        height: 7px;
+        height: 6px;
     }
 
 
     .wheel {
-        width: 34px;
-        height: 34px;
+        width: 31px;
+        height: 31px;
 
         border-width: 4px;
     }
 
 
     .wheel span {
-        width: 9px;
-        height: 9px;
+        width: 8px;
+        height: 8px;
 
-        margin: 8px auto;
+        margin: 7px auto;
+    }
+
+
+    .eyebrow {
+        font-size: 9px;
     }
 
 
     .title {
-        font-size: 26px;
+        font-size:
+            clamp(
+                25px,
+                8.8vw,
+                34px
+            );
     }
 
 
@@ -2101,9 +1980,9 @@ body {
 
 
     .message {
-        font-size: 12px;
+        font-size: 13px;
 
-        line-height: 1.58;
+        line-height: 1.6;
     }
 
 
@@ -2113,11 +1992,11 @@ body {
 
 
     .small-btn {
-        font-size: 9px;
-
         padding:
             5px
-            7px;
+            8px;
+
+        font-size: 9px;
     }
 
 }
@@ -2141,59 +2020,60 @@ and (max-height: 520px) {
 
         height: 100dvh;
 
-        min-height: 0;
-
         border-radius: 0;
     }
 
 
     .topbar {
-        height: 44px;
+        height: 42px;
 
-        padding: 0 12px;
+        padding:
+            0
+            12px;
     }
 
 
     .screen {
-        top: 44px;
+        top: 42px;
 
         height:
             calc(
-                100dvh - 44px
+                100% - 42px
             );
 
-        padding: 7px;
-
-        overflow: hidden;
+        padding: 6px;
     }
 
 
     .card-wrap {
         width: 100%;
-
         max-width: 900px;
 
-        height:
-            calc(
-                100dvh - 54px
-            );
+        height: 100%;
     }
 
 
     .card-content {
+        position: absolute;
+
+        top: 8px;
+        left: 0;
+
+        width: 100%;
+        height: calc(100% - 8px);
 
         display: grid;
 
         grid-template-columns:
-            minmax(170px, 32%)
-            minmax(0, 68%);
+            minmax(150px, 30%)
+            minmax(0, 70%);
 
-        gap: 14px;
+        gap: 12px;
 
         padding:
+            10px
             12px
-            13px
-            60px;
+            56px;
     }
 
 
@@ -2207,18 +2087,63 @@ and (max-height: 520px) {
 
         border-bottom: none;
 
-        padding-right: 13px;
+        padding-right: 12px;
+    }
 
-        padding-bottom: 0;
+
+    .badge {
+        font-size: 8px;
+
+        padding:
+            5px
+            8px;
     }
 
 
     .car {
         width: 100%;
 
-        height: 90px;
+        height: 80px;
 
-        margin-top: 12px;
+        margin-top: 10px;
+    }
+
+
+    .car-body {
+        bottom: 18px;
+
+        height: 37px;
+    }
+
+
+    .car-window {
+        top: 11px;
+
+        height: 22px;
+    }
+
+
+    .headlight {
+        bottom: 31px;
+
+        width: 11px;
+        height: 8px;
+    }
+
+
+    .wheel {
+        width: 40px;
+        height: 40px;
+
+        border-width: 5px;
+    }
+
+
+    .wheel span {
+        width: 10px;
+        height: 10px;
+
+        margin: 9px auto;
     }
 
 
@@ -2230,26 +2155,17 @@ and (max-height: 520px) {
 
 
     .tool {
-        width: 31px;
-        height: 31px;
+        width: 28px;
+        height: 28px;
 
-        font-size: 14px;
+        border-radius: 7px;
 
-        border-radius: 8px;
-    }
-
-
-    .message-scroll {
-        padding:
-            0
-            8px
-            15px
-            0;
+        font-size: 13px;
     }
 
 
     .eyebrow {
-        font-size: 10px;
+        font-size: 9px;
 
         margin-bottom: 5px;
     }
@@ -2258,34 +2174,34 @@ and (max-height: 520px) {
     .title {
         font-size:
             clamp(
-                24px,
+                22px,
                 5vw,
-                38px
+                35px
             );
     }
 
 
     .dad-name {
-        font-size: 11px;
-
         margin:
             6px
             0
-            8px;
+            7px;
+
+        font-size: 10px;
     }
 
 
     .message {
-        font-size: 12px;
+        font-size: 11px;
 
-        line-height: 1.5;
+        line-height: 1.45;
     }
 
 
     .signature {
-        margin-top: 12px;
+        margin-top: 10px;
 
-        font-size: 10px;
+        font-size: 9px;
     }
 
 
@@ -2297,7 +2213,7 @@ and (max-height: 520px) {
 
 
 /* =========================================================
-   ACCESSIBILITY
+   REDUCED MOTION
 ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
@@ -2306,14 +2222,11 @@ and (max-height: 520px) {
     *::before,
     *::after {
 
-        animation-duration:
-            .01ms !important;
+        animation-duration: .01ms !important;
 
-        animation-iteration-count:
-            1 !important;
+        animation-iteration-count: 1 !important;
 
-        transition-duration:
-            .01ms !important;
+        transition-duration: .01ms !important;
     }
 
 }

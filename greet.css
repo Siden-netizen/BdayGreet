@@ -1,0 +1,1703 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================================
+   VARIABLES
+========================================= */
+
+:root {
+
+    --yellow: #ffca28;
+    --blue: #56b5ff;
+    --green: #50e38a;
+
+    --text: #f3f6f8;
+    --muted: #9eabb6;
+
+}
+
+
+/* =========================================
+   BODY
+========================================= */
+
+body {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    color: var(--text);
+
+    background:
+
+        radial-gradient(
+            circle at 50% 20%,
+            #1a2732 0,
+            transparent 30%
+        ),
+
+        linear-gradient(
+            140deg,
+            #030507,
+            #0b1117 45%,
+            #05070a
+        );
+
+}
+
+
+/* =========================================
+   GARAGE
+========================================= */
+
+.garage {
+
+    position: relative;
+
+    width: min(1100px, 95vw);
+
+    height: min(760px, 94vh);
+
+    border:
+        1px solid
+        #283641;
+
+    border-radius: 26px;
+
+    overflow: hidden;
+
+    background:
+
+        linear-gradient(
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        ),
+
+        #0a0f14;
+
+    background-size:
+        32px
+        32px;
+
+    box-shadow:
+
+        0 30px 90px
+        rgba(0,0,0,.65);
+
+}
+
+
+/* =========================================
+   TOP BAR
+========================================= */
+
+.topbar {
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 62px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding:
+        0
+        25px;
+
+    background:
+        rgba(7,11,16,.90);
+
+    border-bottom:
+        1px solid
+        #253440;
+
+    z-index: 20;
+
+}
+
+
+.brand {
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+}
+
+
+.brand span {
+
+    color:
+        var(--yellow);
+
+}
+
+
+.status {
+
+    font-size: 12px;
+
+    color:
+        #91a0aa;
+
+}
+
+
+.status b {
+
+    color:
+        var(--green);
+
+}
+
+
+/* =========================================
+   SCREEN
+========================================= */
+
+.screen {
+
+    position: absolute;
+
+    top: 62px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding:
+        25px;
+
+}
+
+
+/* =========================================
+   INTRO
+========================================= */
+
+.intro {
+
+    text-align: center;
+
+    max-width: 650px;
+
+    transition:
+        .7s ease;
+
+}
+
+
+.intro.hide {
+
+    opacity: 0;
+
+    transform:
+        scale(.92)
+        translateY(-20px);
+
+    pointer-events: none;
+
+}
+
+
+.intro h1 {
+
+    margin-bottom:
+        12px;
+
+    font-size:
+        clamp(
+            35px,
+            6vw,
+            65px
+        );
+
+    line-height: 1;
+
+    letter-spacing: 3px;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.intro p {
+
+    margin:
+        0
+        auto
+        28px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        16px;
+
+    line-height:
+        1.6;
+
+}
+
+
+/* =========================================
+   GEAR
+========================================= */
+
+.gear {
+
+    width: 120px;
+    height: 120px;
+
+    margin:
+        0
+        auto
+        25px;
+
+    border:
+        14px
+        dotted
+        #7c8790;
+
+    border-radius: 50%;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    animation:
+        spin
+        9s
+        linear
+        infinite;
+
+}
+
+
+.gear-center {
+
+    width: 35px;
+    height: 35px;
+
+    border-radius: 50%;
+
+    background:
+        var(--yellow);
+
+    box-shadow:
+        0 0 25px
+        rgba(255,202,40,.4);
+
+}
+
+
+/* =========================================
+   START BUTTON
+========================================= */
+
+.start-btn {
+
+    border: none;
+
+    padding:
+        15px
+        28px;
+
+    border-radius:
+        12px;
+
+    color:
+        #101010;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ffca28,
+            #ff9f1a
+        );
+
+    font-size:
+        14px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        1px;
+
+    cursor:
+        pointer;
+
+    box-shadow:
+        0 10px 30px
+        rgba(255,170,20,.25);
+
+    transition:
+        .25s ease;
+
+}
+
+
+.start-btn:hover {
+
+    transform:
+        translateY(-3px)
+        scale(1.03);
+
+}
+
+
+/* =========================================
+   CARD WRAPPER
+========================================= */
+
+.card-wrap {
+
+    position: relative;
+
+    width:
+        min(1000px, 96%);
+
+    height:
+        min(650px, 84vh);
+
+    opacity: 0;
+
+    transform:
+        translateY(40px)
+        scale(.96);
+
+    pointer-events:
+        none;
+
+    transition:
+        1s
+        cubic-bezier(
+            .2,
+            .8,
+            .2,
+            1
+        );
+
+}
+
+
+.card-wrap.show {
+
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+    pointer-events:
+        auto;
+
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.card {
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius:
+        22px;
+
+    overflow:
+        hidden;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.04),
+            rgba(255,255,255,.01)
+        ),
+
+        #0f171f;
+
+    border:
+        1px
+        solid
+        #3a4853;
+
+    box-shadow:
+
+        0 35px 70px
+        rgba(0,0,0,.6);
+
+}
+
+
+/* =========================================
+   BLUEPRINT
+========================================= */
+
+.blueprint {
+
+    position: absolute;
+
+    inset: 0;
+
+    opacity:
+        .08;
+
+    background:
+
+        linear-gradient(
+            transparent 49%,
+            #9ec1d5 50%,
+            transparent 51%
+        ),
+
+        linear-gradient(
+            90deg,
+            transparent 49%,
+            #9ec1d5 50%,
+            transparent 51%
+        );
+
+    background-size:
+        38px
+        38px;
+
+}
+
+
+/* =========================================
+   GARAGE LIGHT
+========================================= */
+
+.garage-light {
+
+    position: relative;
+
+    height:
+        10px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--yellow),
+            transparent
+        );
+
+    box-shadow:
+
+        0 0 30px
+        rgba(255,202,40,.35);
+
+}
+
+
+/* =========================================
+   CARD CONTENT
+========================================= */
+
+.card-content {
+
+    position: absolute;
+
+    top: 10px;
+
+    left: 0;
+    right: 0;
+
+    bottom: 0;
+
+    display: grid;
+
+    grid-template-columns:
+        38%
+        62%;
+
+    min-height: 0;
+
+    padding:
+        35px
+        35px
+        90px
+        35px;
+
+    gap:
+        30px;
+
+}
+
+
+/* =========================================
+   LEFT SIDE
+========================================= */
+
+.left-side {
+
+    min-width: 0;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        space-between;
+
+    border-right:
+        1px
+        solid
+        #2f3d48;
+
+    padding-right:
+        30px;
+
+}
+
+
+/* =========================================
+   BADGE
+========================================= */
+
+.badge {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    padding:
+        8px
+        14px;
+
+    border-radius:
+        999px;
+
+    font-size:
+        11px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        1.5px;
+
+    background:
+        #17222c;
+
+    border:
+        1px
+        solid
+        #34434f;
+
+    color:
+        #bdc7ce;
+
+}
+
+
+.badge i {
+
+    width:
+        8px;
+
+    height:
+        8px;
+
+    border-radius:
+        50%;
+
+    background:
+        var(--green);
+
+    box-shadow:
+        0 0 10px
+        var(--green);
+
+}
+
+
+/* =========================================
+   CAR
+========================================= */
+
+.car {
+
+    position:
+        relative;
+
+    margin-top:
+        55px;
+
+    height:
+        200px;
+
+}
+
+
+/* CAR BODY */
+
+.car-body {
+
+    position:
+        absolute;
+
+    left:
+        6%;
+
+    right:
+        6%;
+
+    bottom:
+        40px;
+
+    height:
+        80px;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            #56636d,
+            #252e35
+        );
+
+    border:
+        2px
+        solid
+        #81909b;
+
+    border-radius:
+        50px
+        60px
+        20px
+        20px;
+
+    transform:
+        skewX(-7deg);
+
+}
+
+
+/* CAR WINDOW */
+
+.car-window {
+
+    position:
+        absolute;
+
+    width:
+        42%;
+
+    height:
+        45px;
+
+    left:
+        29%;
+
+    top:
+        38px;
+
+    border:
+        2px
+        solid
+        #81909b;
+
+    border-bottom:
+        none;
+
+    border-radius:
+        30px
+        30px
+        0
+        0;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #22303a,
+            #11171d
+        );
+
+    transform:
+        skewX(-7deg);
+
+}
+
+
+/* HEADLIGHT */
+
+.headlight {
+
+    position:
+        absolute;
+
+    right:
+        6%;
+
+    bottom:
+        65px;
+
+    width:
+        20px;
+
+    height:
+        14px;
+
+    border-radius:
+        50%;
+
+    background:
+        #ffd54f;
+
+    box-shadow:
+        0 0 20px
+        #ffd54f;
+
+}
+
+
+/* WHEELS */
+
+.wheel {
+
+    position:
+        absolute;
+
+    bottom:
+        2px;
+
+    width:
+        62px;
+
+    height:
+        62px;
+
+    border-radius:
+        50%;
+
+    background:
+        #090c0f;
+
+    border:
+        8px
+        solid
+        #323d45;
+
+}
+
+
+.wheel span {
+
+    display:
+        block;
+
+    width:
+        17px;
+
+    height:
+        17px;
+
+    margin:
+        14px
+        auto;
+
+    border-radius:
+        50%;
+
+    background:
+        #636f77;
+
+}
+
+
+.wheel-left {
+
+    left:
+        12%;
+
+}
+
+
+.wheel-right {
+
+    right:
+        12%;
+
+}
+
+
+/* =========================================
+   TOOLS
+========================================= */
+
+.tool-row {
+
+    display:
+        flex;
+
+    gap:
+        12px;
+
+    flex-wrap:
+        wrap;
+
+}
+
+
+.tool {
+
+    width:
+        45px;
+
+    height:
+        45px;
+
+    border-radius:
+        12px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    font-size:
+        22px;
+
+    background:
+        #171f27;
+
+    border:
+        1px
+        solid
+        #34434f;
+
+}
+
+
+/* =========================================
+   RIGHT SIDE
+========================================= */
+
+.right-side {
+
+    min-width:
+        0;
+
+    min-height:
+        0;
+
+    overflow:
+        hidden;
+
+}
+
+
+/* =========================================
+   MESSAGE SCROLLER
+========================================= */
+
+.message-scroll {
+
+    height:
+        100%;
+
+    overflow-y:
+        auto;
+
+    overflow-x:
+        hidden;
+
+    padding:
+        5px
+        18px
+        20px
+        0;
+
+    scrollbar-width:
+        thin;
+
+    scrollbar-color:
+        #56636d
+        transparent;
+
+}
+
+
+/* CHROME SCROLLBAR */
+
+.message-scroll::-webkit-scrollbar {
+
+    width:
+        8px;
+
+}
+
+
+.message-scroll::-webkit-scrollbar-track {
+
+    background:
+        transparent;
+
+}
+
+
+.message-scroll::-webkit-scrollbar-thumb {
+
+    background:
+        #53616c;
+
+    border-radius:
+        20px;
+
+}
+
+
+.message-scroll::-webkit-scrollbar-thumb:hover {
+
+    background:
+        #72818c;
+
+}
+
+
+/* =========================================
+   EYEBROW
+========================================= */
+
+.eyebrow {
+
+    color:
+        var(--yellow);
+
+    font-size:
+        15px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        2px;
+
+    margin-bottom:
+        12px;
+
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.title {
+
+    margin:
+        0;
+
+    font-size:
+        clamp(
+            38px,
+            5vw,
+            62px
+        );
+
+    line-height:
+        .95;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        2px;
+
+    overflow-wrap:
+        break-word;
+
+}
+
+
+.title span {
+
+    display:
+        block;
+
+    color:
+        var(--blue);
+
+    word-break:
+        normal;
+
+}
+
+
+/* =========================================
+   DAD NAME
+========================================= */
+
+.dad-name {
+
+    margin:
+        20px 0
+        22px;
+
+    font-size:
+        clamp(
+            17px,
+            2vw,
+            23px
+        );
+
+    font-weight:
+        800;
+
+    line-height:
+        1.3;
+
+}
+
+
+/* =========================================
+   MESSAGE
+========================================= */
+
+.message {
+
+    color:
+        #cbd4da;
+
+    font-size:
+        17px;
+
+    line-height:
+        1.8;
+
+    max-width:
+        100%;
+
+    overflow-wrap:
+        break-word;
+
+}
+
+
+.signature {
+
+    margin-top:
+        28px;
+
+    padding-bottom:
+        30px;
+
+    color:
+        #8d9aa3;
+
+    font-size:
+        14px;
+
+    font-style:
+        italic;
+
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer-note {
+
+    position:
+        absolute;
+
+    left:
+        35px;
+
+    bottom:
+        20px;
+
+    z-index:
+        20;
+
+    color:
+        #64727c;
+
+    font-size:
+        11px;
+
+}
+
+
+/* =========================================
+   CONTROLS
+========================================= */
+
+.controls {
+
+    position:
+        absolute;
+
+    right:
+        20px;
+
+    bottom:
+        14px;
+
+    z-index:
+        30;
+
+    display:
+        flex;
+
+    gap:
+        8px;
+
+    padding:
+        5px;
+
+    background:
+        rgba(13,20,27,.94);
+
+    border-radius:
+        12px;
+
+    border:
+        1px
+        solid
+        #253440;
+
+}
+
+
+.small-btn {
+
+    border:
+        1px
+        solid
+        #394852;
+
+    background:
+        #0d141b;
+
+    color:
+        #cbd4da;
+
+    border-radius:
+        9px;
+
+    padding:
+        9px
+        13px;
+
+    cursor:
+        pointer;
+
+    font-size:
+        12px;
+
+}
+
+
+.small-btn:hover {
+
+    border-color:
+        #637581;
+
+}
+
+
+/* =========================================
+   CONFETTI
+========================================= */
+
+.confetti {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    pointer-events:
+        none;
+
+    overflow:
+        hidden;
+
+    z-index:
+        50;
+
+}
+
+
+.piece {
+
+    position:
+        absolute;
+
+    top:
+        -20px;
+
+    width:
+        8px;
+
+    height:
+        14px;
+
+    opacity:
+        0;
+
+    animation:
+        fall
+        linear
+        forwards;
+
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes spin {
+
+    from {
+        transform:
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+
+}
+
+
+@keyframes fall {
+
+    0% {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(-30px)
+            rotate(0deg);
+
+    }
+
+    100% {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(720px)
+            rotate(660deg);
+
+    }
+
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 850px) {
+
+    .card-content {
+
+        grid-template-columns:
+            35%
+            65%;
+
+        padding:
+            28px
+            28px
+            90px
+            28px;
+
+        gap:
+            22px;
+
+    }
+
+
+    .left-side {
+
+        padding-right:
+            20px;
+
+    }
+
+
+    .car {
+
+        margin-top:
+            45px;
+
+        transform:
+            scale(.85);
+
+        transform-origin:
+            top center;
+
+    }
+
+
+    .title {
+
+        font-size:
+            clamp(
+                32px,
+                6vw,
+                48px
+            );
+
+    }
+
+
+    .message {
+
+        font-size:
+            15px;
+
+        line-height:
+            1.7;
+
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+    body {
+
+        align-items:
+            center;
+
+    }
+
+
+    .garage {
+
+        width:
+            94vw;
+
+        height:
+            94vh;
+
+        border-radius:
+            20px;
+
+    }
+
+
+    .topbar {
+
+        height:
+            55px;
+
+        padding:
+            0
+            15px;
+
+    }
+
+
+    .brand {
+
+        font-size:
+            10px;
+
+        letter-spacing:
+            1px;
+
+    }
+
+
+    .status {
+
+        font-size:
+            9px;
+
+    }
+
+
+    .screen {
+
+        top:
+            55px;
+
+        padding:
+            12px;
+
+    }
+
+
+    .card-wrap {
+
+        width:
+            100%;
+
+        height:
+            90vh;
+
+    }
+
+
+    .card {
+
+        border-radius:
+            18px;
+
+    }
+
+
+    .card-content {
+
+        position:
+            absolute;
+
+        top:
+            10px;
+
+        bottom:
+            0;
+
+        display:
+            flex;
+
+        flex-direction:
+            column;
+
+        gap:
+            10px;
+
+        padding:
+            20px
+            18px
+            85px;
+
+        overflow:
+            hidden;
+
+    }
+
+
+    .left-side {
+
+        flex:
+            0 0 auto;
+
+        border-right:
+            none;
+
+        border-bottom:
+            1px
+            solid
+            #2f3d48;
+
+        padding:
+            0
+            0
+            12px;
+
+    }
+
+
+    .car {
+
+        height:
+            100px;
+
+        margin-top:
+            22px;
+
+        transform:
+            scale(.65);
+
+        transform-origin:
+            top center;
+
+    }
+
+
+    .tool-row {
+
+        display:
+            none;
+
+    }
+
+
+    .right-side {
+
+        flex:
+            1 1 auto;
+
+        min-height:
+            0;
+
+    }
+
+
+    .message-scroll {
+
+        height:
+            100%;
+
+        padding-right:
+            10px;
+
+    }
+
+
+    .eyebrow {
+
+        font-size:
+            12px;
+
+    }
+
+
+    .title {
+
+        font-size:
+            clamp(
+                31px,
+                9vw,
+                45px
+            );
+
+    }
+
+
+    .dad-name {
+
+        font-size:
+            16px;
+
+        margin:
+            15px
+            0
+            15px;
+
+    }
+
+
+    .message {
+
+        font-size:
+            14px;
+
+        line-height:
+            1.7;
+
+    }
+
+
+    .signature {
+
+        font-size:
+            12px;
+
+        padding-bottom:
+            20px;
+
+    }
+
+
+    .footer-note {
+
+        display:
+            none;
+
+    }
+
+
+    .controls {
+
+        right:
+            12px;
+
+        bottom:
+            12px;
+
+    }
+
+
+    .small-btn {
+
+        padding:
+            8px
+            10px;
+
+    }
+
+}
